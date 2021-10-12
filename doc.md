@@ -15,4 +15,4 @@ I want to be able to share a specific directory on my Raspberry Pi over the Netw
 
 ## Solution
 
-Use vsftpd with chroot, change home directory of ftp users. use Cx Explorer on Android to access FTP server.
+https://www.linuxquestions.org/questions/linux-newbie-8/how-could-i-upload-pictures-and-videos-from-android-phone-to-a-remote-directory-on-my-raspberry-with-debian-10-a-4175701848/#post6291362
