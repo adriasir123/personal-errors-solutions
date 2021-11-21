@@ -29,3 +29,14 @@ Basically you create a backup box, and then vagrant destroy and up the same mach
 ## Solution
 
 Not found one yet.
+
+
+
+## Problem
+
+A logical volume with LVM is running out of space.
+
+## Solution
+
+https://www.linuxtechi.com/extend-lvm-partitions/
+
