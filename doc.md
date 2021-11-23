@@ -40,3 +40,22 @@ A logical volume with LVM is running out of space.
 
 https://www.linuxtechi.com/extend-lvm-partitions/
 
+
+## Problem
+
+Disk file qcow2 of VM Vagrant Libvirt is running out of space and I need to resize it (Rocky8 VM).
+
+## Solution
+
+```
+sudo qemu-img resize /var/lib/libvirt/images/escenario-libvirt_hera.img +1G
+sudo dnf install cloud-utils-growpart
+sudo growpart /dev/vda 1
+sudo xfs_growfs /
+```
+
+Check:
+```
+lsblk
+df -Th
+```
