@@ -65,3 +65,29 @@ Check:
 lsblk
 df -Th
 ```
+
+
+
+## Problem
+
+SSD not recognized during the Debian 11.5 installation (partitioning step).
+
+## Solution
+
+Change SATA settings in BIOS from RST to AHCI.
+
+
+
+## Problem
+
+```
+Unable to install GRUB in dummy
+Executing 'grub-install dummy' failed.
+This is a fatal error.
+```
+
+## Solution
+
+The EFI partition must NOT be inside LVM. It HAS TO BE a physical partition, otherwise the debian installer won't find the EFI partition inside LVM.  
+GRUB is installed in EFI.
+
