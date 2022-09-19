@@ -91,3 +91,22 @@ This is a fatal error.
 The EFI partition must NOT be inside LVM. It HAS TO BE a physical partition, otherwise the debian installer won't find the EFI partition inside LVM.  
 GRUB is installed in EFI.
 
+
+
+## Problem
+
+WiFi not working on Debian 11.5.
+
+## Solution
+
+https://miloserdov.org/?p=5930
+
+```
+sudo apt install bc module-assistant build-essential dkms
+git clone https://github.com/tomaspinho/rtl8821ce
+cd rtl8821ce
+sudo m-a prepare
+sudo ./dkms-install.sh
+```
+
+Next, restart.
