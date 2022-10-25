@@ -70,6 +70,39 @@ df -Th
 
 ## Problem
 
+Default qcow2 file (20G) of vagrant VM for Oracle too small, I need to resize it.
+
+## Solution
+
+Stop the VM:
+
+```shell
+vagrant halt servidororacle
+```
+
+Resize the disk file:
+
+```shell
+virsh -c qemu:///system vol-resize p1-bd-alumno1_servidororacle.img 50G --pool default
+```
+
+Resize the partition and filesystem:
+
+```shell
+echo ", +" | sudo sfdisk -N 1 /dev/vda --no-reread
+sudo partprobe
+sudo resize2fs /dev/vda1
+```
+
+
+
+
+
+
+
+
+## Problem
+
 SSD not recognized during the Debian 11.5 installation (partitioning step).
 
 ## Solution
