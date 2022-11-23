@@ -143,3 +143,15 @@ sudo ./dkms-install.sh
 ```
 
 Next, restart.
+
+## Problem
+
+I have a vagrant VM in a ready state that I want to package and upload to Vagrant Cloud to replicate.
+
+## Solution
+
+```
+vagrant package servidororacle1 --output oracle19c-debian11.box
+```
+
+Upload the box to Vagrant Cloud through their website.
