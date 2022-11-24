@@ -155,3 +155,22 @@ vagrant package servidororacle1 --output oracle19c-debian11.box
 ```
 
 Upload the box to Vagrant Cloud through their website.
+
+## Problem
+
+Using Gnome in Debian 11 you get the "Wired Unmanaged" icon, but the connection is working.
+
+## Solution
+
+Change the following value to `true` in `/etc/NetworkManager/NetworkManager.conf`:
+
+```
+[ifupdown]
+managed=true
+```
+
+Restart:
+
+```
+sudo systemctl restart NetworkManager
+```
